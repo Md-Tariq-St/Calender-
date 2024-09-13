@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+           font-family: "Dancing Script", cursive;
+         }
+         .container{
+             background-color:#343f59;
+             display:flex;
+             justify-content:center;
+             align-items:center;
+             height:100vh;
+             flex-direction:column; 
+             
+         }
+      .calender{
+         /* border:9px solid #aa3206;*/
+          background-color:#fff;
+          width:60%;
+          max-width:270px;
+          padding:15px;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          flex-direction:column; 
+          color:#000;
+          position:relative;
+          border-radius:9px;
+       }     
+      
+         .calender >:nth-child(1){
+           font-size:1.7rem; 
+           color:#fff;
+        }
+         .calender >:nth-child(2){
+           font-size:2rem; 
+           color:#fff;
+         /*  text-transform:uppercase;  */
+        }
+         .calender >:nth-child(3){
+           font-size:13rem; 
+        }
+         .calender >:nth-child(4){
+           font-size:2rem; 
+           
+        }
+        h1{
+            color:#fff;
+            font-size:2rem; 
+            
+        }
+         
+       .calender::before{
+           content:'';
+           width:100%;
+           height:82px;
+           background-color:#03bef2;
+           position:absolute;
+           top:0;
+           left:0;
+           border-top-left-radius:9px;
+           border-top-right-radius:9px;
+        }
+        .calender::after{
+           content:'';
+           width:12px;
+           height:12px;
+           background-color:#343f59;
+           position:absolute;
+           top:7px;
+           left:7px;
+           border-radius:50%;
+        }
+     
+         p{
+         z-index:2;
+        }
+     
+    </style>
+</head>
+<body>
+    <div class="container">
+            <h1>Calender</h1>
+        <div class="calender">
+          
+            <p id="year"></p>
+            <p id="month"></p>
+            <p id="date"></p>
+            <p id="day"></p>
+        </div>
+    </div>
+    
+    
+    
+    <script>
+        const year = document.getElementById("year");
+        const month = document.getElementById("month");
+        const date = document.getElementById("date");
+        const day = document.getElementById("day");
+        
+ const weeksDays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Tuesdays",
+  "Friday",
+  "Saturday"
+];
+
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+
+
+let today = new Date()
+
+date.innerHTML = (today.getDate()<10?"0":"")+today.getDate()
+day.innerHTML = weeksDays[today.getDay()]
+month.innerHTML = months[today.getMonth()]
+year.innerHTML = today.getFullYear()
+
+
+        
+        
+    </script>
+</body>
+</html>
